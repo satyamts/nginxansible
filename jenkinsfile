@@ -2,7 +2,7 @@ pipeline{
     agent { lable 'Ansible'}
     stages{
         stage ('clone') {
-            git url: https://github.com/satyamts/nginxansible.git",
+            git url: "https://github.com/satyamts/nginxansible.git",
             branch: 'master'
         }
         stage ( 'excute play book') {
