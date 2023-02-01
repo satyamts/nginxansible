@@ -1,0 +1,15 @@
+pipeline{
+    agent { lable 'Ansible'}
+    stages{
+        stage ('clone') {
+            git url: https://github.com/satyamts/nginxansible.git",
+            branch: 'master'
+        }
+        stage ( 'excute play book') {
+            steps {
+                sh 'ansible playbook -i hosts apache.yml'
+            }   
+        }
+
+    }
+}
